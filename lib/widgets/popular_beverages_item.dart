@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:assignment/core/app_colors.dart';
+import 'package:assignment/widgets/gradient_border.dart';
 import 'package:flutter/material.dart';
 
 class PopularBeveragesItem extends StatelessWidget {
@@ -9,6 +10,7 @@ class PopularBeveragesItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
     return ClipRRect(
       borderRadius: BorderRadius.circular(5),
       child: BackdropFilter(
@@ -17,34 +19,48 @@ class PopularBeveragesItem extends StatelessWidget {
           sigmaY: 10,
         ),
         child: Container(
-          height: 265,
+          height: height * 0.2441,
           width: 213,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5),
-            gradient: const LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Color.fromRGBO(255, 255, 255, 0.36),
-                Color.fromRGBO(255, 255, 255, 0.18),
-                Color.fromRGBO(255, 255, 255, 0.3),
-              ],
-            ),
-          ),
+              borderRadius: BorderRadius.circular(5),
+              gradient: const LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color.fromRGBO(255, 255, 255, 0.36),
+                  Color.fromRGBO(255, 255, 255, 0.18),
+                  Color.fromRGBO(255, 255, 255, 0.3),
+                ],
+              ),
+              border: const GradientBoxBorder(
+                  gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color.fromRGBO(255, 255, 255, 1),
+                  Color.fromRGBO(255, 255, 255, 0.33),
+                  Color.fromRGBO(255, 255, 255, 0.29),
+                  Color.fromRGBO(255, 255, 255, 0.35),
+                ],
+              ))),
           child: Stack(
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 27),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(
-                      height: 29,
+                    SizedBox(
+                      height: height * 0.0200,
                     ),
-                    Image.asset(
-                      imageString,
-                      width: 131,
-                      height: 128,
+                    Align(
+                      alignment: Alignment.center,
+                      child: Image.asset(
+                        imageString,
+                        width: 131,
+                        height: height * 0.1110,
+                      ),
                     ),
                     const Text(
                       'Hot Cappuccino',
@@ -79,7 +95,7 @@ class PopularBeveragesItem extends StatelessWidget {
                           color: AppColors.starColor,
                         ),
                         Text(
-                          '458',
+                          '(458)',
                           style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.w300,

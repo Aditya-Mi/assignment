@@ -10,12 +10,12 @@ class LoginButton extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
+        width: 245,
         alignment: Alignment.center,
         padding: const EdgeInsets.only(
-          top: 10,
-          bottom: 15,
+          top: 5,
+          bottom: 10,
         ),
-        margin: const EdgeInsets.symmetric(horizontal: 30),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(33),
             gradient: const LinearGradient(

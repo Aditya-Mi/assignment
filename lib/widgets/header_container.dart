@@ -9,11 +9,13 @@ class HeaderContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return GlassMorphedContainer(
       blurValue: 15,
       backgroundColor: Colors.white.withAlpha(25),
       horizontalPadding: 20,
-      verticalPadding: 27,
+      verticalPadding: width > 1100 ? 10 : 27,
       child: Column(
         children: [
           Row(
@@ -84,8 +86,8 @@ class HeaderContainer extends StatelessWidget {
               )
             ],
           ),
-          const SizedBox(
-            height: 35,
+          SizedBox(
+            height: height * 0.0319,
           ),
           SizedBox(
             height: 55,

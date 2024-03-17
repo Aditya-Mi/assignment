@@ -63,6 +63,8 @@ flutter:
     - assets/images/cup.png
     - assets/images/image.png
     - assets/images/black_coffee.png
+    - assets/images/veg.png
+    - assets/images/error.png
     - assets/icons/bag.svg
     - assets/icons/chat.svg
     - assets/icons/home.svg
